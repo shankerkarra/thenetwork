@@ -1,9 +1,11 @@
 <template>
   <div class="home flex-grow-1 d-flex flex-column align-items-center justify-content-center">
+    <!-- Display the Navigation Header & body data
     <img src="https://bcw.blob.core.windows.net/public/img/8600856373152463" alt="CodeWorks Logo">
     <h1 class="my-5 bg-dark text-light p-3 rounded d-flex align-items-center">
       <span class="mx-2 text-white">Vue 3 Starter</span>
-    </h1>
+    </h1> -->
+    <account />
   </div>
 </template>
 
