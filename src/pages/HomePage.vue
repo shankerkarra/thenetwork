@@ -42,7 +42,6 @@ export default {
       // console.log(prev + "-"+ next)
     }
   }
-  components:{}
 }
 </script>
 
