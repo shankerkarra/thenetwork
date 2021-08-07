@@ -1,17 +1,48 @@
 <template>
   <div class="home flex-grow-1 d-flex flex-column align-items-center justify-content-center">
-    <!-- Display the Navigation Header & body data
-    <img src="https://bcw.blob.core.windows.net/public/img/8600856373152463" alt="CodeWorks Logo">
-    <h1 class="my-5 bg-dark text-light p-3 rounded d-flex align-items-center">
-      <span class="mx-2 text-white">Vue 3 Starter</span>
-    </h1> -->
-    <account />
+    <Login />
+    <PostThread :posts="posts" />
+  </div>
+  <button type="button" value="${prev}" @click="counter-=1" class="prev">
+    Prev +  '${prev}'
+  </button>
+  <!-- <span v-for="n in Posts" :key="n.id">{{ n }} </span> -->
+  <button type="button" value="prev" @click="counter +=1" class="next">
+    Next
+  </button>
+  <div>
   </div>
 </template>
 
 <script>
+import { computed, onMounted } from '@vue/runtime-core'
+import { AppState } from '../AppState'
+import Pop from '../utils/Notifier'
+import { postsService } from '../services/PostsService'
+// import { displaysService } from '../services/DisplayService'
+
 export default {
-  name: 'Home'
+  name: 'Home',
+  prev: '',
+  next: '',
+  setup() {
+    onMounted(async() => {
+      try {
+        await postsService.getAll()
+        // await displaysService.getAll()
+      } catch (error) {
+        Pop.toast(error, 'error')
+      }
+    })
+
+    return {
+      prev: computed(() => AppState.posts.newer),
+      // next: computed(() => AppState.posts.older),
+      posts: computed(() => AppState.posts)
+      // console.log(prev + "-"+ next)
+    }
+  }
+  components:{}
 }
 </script>
 
