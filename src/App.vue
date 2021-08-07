@@ -6,6 +6,7 @@
       </div>
       <div class="col-md-7" width="40px" height="70px">
         <Navbar />
+        <Display />
         <router-view />
       </div>
     </div>

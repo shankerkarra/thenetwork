@@ -7,7 +7,7 @@ class DisplayService {
   async getAll(query = {}) {
     const res = await api.get('/api/ads')
     logger.log(res.data)
-    AppState.bloggrs = res.data
+    AppState.displays = res.data
   }
 }
 
