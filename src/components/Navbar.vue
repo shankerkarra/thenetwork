@@ -1,13 +1,15 @@
 <template>
-  <!-- <div class="row"> -->
-  <!-- <div class="col-md-6 p-2 m-2  bg-primary">
-    <router-link :to="{ name: 'Account' }">
-    </router-link>
-  </div> -->
-  <!-- <div class="col-md-6"> -->
   <div class="row">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <router-link class="navbar-brand d-flex" :to="{ name: 'Home' }">
+      <div class="input-group">
+        <div class="form-outline">
+          <input type="search" id="form1" placeholder="Search..." class="form-control" />
+        </div>
+        <button type="button" height="8%" class="btn btn-primary">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+      <router-link class="navbar-brand d-flex" :to="{ name: 'Search' }">
       </router-link>
       <button
         class="navbar-toggler"
@@ -21,13 +23,6 @@
         <span class="navbar-toggler-icon" />
       </button>
       <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <router-link :to="{ name: 'Home' }" class="nav-link">
-              Home
-            </router-link>
-          </li>
-        </ul>
         <span class="navbar-text">
           <button
             class="btn btn-outline-primary text-uppercase"
@@ -56,7 +51,7 @@
             >
               <router-link :to="{ name: 'Account' }">
                 <div class="list-group-item list-group-item-action hoverable">
-                  Account
+                  AccountPage
                 </div>
               </router-link>
               <div
@@ -71,14 +66,14 @@
       </div>
     </nav>
   </div>
-  <!-- </div> -->
-  <!-- </div> -->
 </template>
 
 <script>
 import { AuthService } from '../services/AuthService'
 import { AppState } from '../AppState'
 import { computed, reactive } from 'vue'
+import '@mdi/font/css/materialdesignicons.css'
+
 export default {
   setup() {
     const state = reactive({

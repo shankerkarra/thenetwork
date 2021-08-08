@@ -1,6 +1,6 @@
 <template>
   <div class="home flex-grow-1 d-flex flex-column align-items-center justify-content-center">
-    <div class="row w-80">
+    <div class="row w-200">
       <div class="col">
         <PostThread :posts="posts" />
         <button type="button" value="${prev}" @click="counter-=1" class="prev">
