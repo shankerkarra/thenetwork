@@ -5,7 +5,7 @@
         <Account />
       </div>
       <div class="col-md-7">
-        <!-- <Navbar /> -->
+        <Navbar />
         <!-- Navbar commented to make test -->
         <Display />
         <router-view />
