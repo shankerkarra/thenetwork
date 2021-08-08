@@ -1,18 +1,12 @@
 <template>
   <div class="home flex-grow-1 d-flex flex-column align-items-center justify-content-center">
-    <div class="row w-200">
-      <div class="col">
+    <div class="row d-flex flex-column">
+      <div class="col-6">
         <PostThread :posts="posts" />
-        <button type="button" value="${prev}" @click="counter-=1" class="prev">
-          Prev
-        </button>
-        <button type="button" value="prev" @click="counter +=1" class="next">
-          Next
-        </button>
       </div>
-      <div class="col Border-black">
+      <div class="col-6">
         <p>
-          <DisplayComponent :posts="posts" />
+          <DisplayComponent :displays="displays" />
         </p>
       </div>
       <div>
@@ -23,6 +17,7 @@
 
 <script>
 import { computed, onMounted } from '@vue/runtime-core'
+import { reactive } from 'vue'
 import { AppState } from '../AppState'
 import Pop from '../utils/Notifier'
 import { postsService } from '../services/PostsService'
@@ -33,9 +28,11 @@ import { displayService } from '../services/DisplayService'
 export default {
   // components: { DisplayComponent },
   name: 'Home',
-  prev: '',
-  next: '',
   setup() {
+    const state = reactive({
+      prev: '',
+      next: ''
+    })
     const router = useRoute()
     onMounted(async() => {
       try {

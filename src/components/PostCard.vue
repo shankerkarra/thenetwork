@@ -39,7 +39,6 @@ d<template>
         delete
       </button>
     </div>
-    <!-- copied to test the delete button v-if="account.id === post.creatorId"   -->
   </div>
 </template>
 

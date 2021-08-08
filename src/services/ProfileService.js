@@ -7,16 +7,28 @@ class ProfileService {
     try {
       const res = await api.get('api/Profiles/:id' + id)
       AppState.account = res.data
-      debugger
     } catch (err) {
       logger.error('HAVE YOU STARTED YOUR SERVER YET???', err)
     }
   }
 
-//   //  NEED TO ADD query & ID-Posts
-//   GET https://bcw-sandbox.herokuapp.com/api/profiles?query=
-//     GET https://bcw-sandbox.herokuapp.com/api/profiles/:id/posts
-  //
+  async getProfileByQuery(query = {}) {
+    try {
+      const res = await api.get('api/Profiles/' + query)
+      AppState.account = res.data
+    } catch (err) {
+      logger.error('HAVE YOU STARTED YOUR SERVER YET???', err)
+    }
+  }
+
+  async getProfileByIdPost(id) {
+    try {
+      const res = await api.get('api/Profiles/:id' + id + '/posts/')
+      AppState.account = res.data
+    } catch (err) {
+      logger.error('HAVE YOU STARTED YOUR SERVER YET???', err)
+    }
+  }
 }
 
 export const profileService = new ProfileService()
