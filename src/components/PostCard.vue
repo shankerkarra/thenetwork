@@ -1,31 +1,37 @@
 d<template>
-  <div class="card border-black w-75 p-1 m-1">
+  <div class="card card-block border-black w-500 p-1 m-1">
     <div class="row no-gutters m-1">
+      <!-- disabled as button "Stop" is propagating to the parent and not allowing  -->
+      <!-- <router-link router-link :to="{ name: 'profile', params: {id: post.creator.id } }" @click.stop="" class="creator p-3 align-self-end">
+        <img class="h-100 rounded-pill" :src="post.creator.picture" alt="" srcset="">
+        {{ post.creator.name }}
+      </router-link> -->
       <div class="col-12 justify-align-right">
-        <img align="left"
-             src="https://randomuser.me/api/portraits/women/14.jpg"
+        <img class="img img-rounded h-40 rounded-pill"
+             :src="post.creator.picture"
              width="35"
              height="35"
-             class="img img-rounded"
-        /> <p> Post Author Name</p>
+             alt=""
+             srcset=""
+             align="left"
+        >
+        {{ post.creator.name }}
       </div>
     </div>
     <div class="row p-1 no-gutters justify-align-left">
       <div class="col-md-12 py-1 px-1 word-break word-wrap">
         <p>
-          <a class="float-left"><small>{{ post.body }}</small></a><br>
-          UX, or user experience, is every interaction your business has with people on your website, mobile site, apps, and online properties or services. That might sound like an exhausting number of situations to consider, but creating good UX design means focusing on the user, no matter where they are
+          <a class="card-text float-left"><small>{{ post.body }}</small></a><br>
         </p>
       </div>
     </div>
-    <!-- <div class="row d-flex flex-column"> -->
-    <div class="imgdisplay">
-      <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.W8apTKARTqVhmLzMCisNmAHaEs%26pid%3DApi%26h%3D160&f=1" class="img-fluid" />
-      <br>
-      <p class="likedcount align-right">
-        <i class="fa fa-heart"> &nbsp;  {{ post.likes.length }}</i>
-      </p>
+    <div class="imgdisplay m-1">
+      <img class="coverimg img-fluid" :src="post.creator.coverImg" />
     </div>
+    <br>
+    <p class="likedcount align-right">
+      <i class="fa fa-heart"> &nbsp;  {{ post.likes.length }}</i>
+    </p>
     <div class="align-self-end" v-if="account.id === post.creatorId">
       <button class="btn btn-danger" @click.stop="destroy">
         delete
@@ -33,7 +39,7 @@ d<template>
     </div>
     <!-- <router-link router-link :to="{ name: 'profile', params: {id: post.creator.id } }" @click.stop="" class="creator p-3 align-self-end">
       <img class="h-100 rounded-pill" :src="post.creator.picture" alt="" srcset="">
-      {{ post.creator.name }}
+      {{ post.creator.id }}
     </router-link> -->
     <!-- copied to test the delete button v-if="account.id === post.creatorId"   -->
   </div>
@@ -85,5 +91,15 @@ a {
   height: 3em;
 }
 .img-rounded{border-radius:50%;}
+
+.card {
+    max-width: 100%; overflow: hidden;
+}
+.card-text {
+    word-wrap: break-word;
+}
+.card-block {
+  word-wrap: break-word;
+}
 
 </style>
