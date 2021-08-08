@@ -23,8 +23,13 @@ d<template>
       <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.W8apTKARTqVhmLzMCisNmAHaEs%26pid%3DApi%26h%3D160&f=1" class="img-fluid" />
       <br>
       <p class="likedcount align-right">
-        <i class="fa fa-heart"> &nbsp  {{ post.likes.length }}</i>
+        <i class="fa fa-heart"> &nbsp;  {{ post.likes.length }}</i>
       </p>
+    </div>
+    <div class="align-self-end" v-if="account.id === post.creatorId">
+      <button class="btn btn-danger" @click.stop="destroy">
+        delete
+      </button>
     </div>
     <!-- </div> -->
   </div>
@@ -46,7 +51,6 @@ export default {
   },
   setup(props) {
     return {
-      // likedCount: computed(() => AppState.posts.posts.likeIds.Length),
       account: computed(() => AppState.account),
       async destroy() {
         try {
@@ -61,7 +65,6 @@ export default {
     }
   }
 }
-
 </script>
 
 <style lang="scss" scoped>

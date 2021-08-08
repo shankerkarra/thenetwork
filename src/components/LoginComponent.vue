@@ -1,16 +1,16 @@
 <template>
   <div class="card p-1 m-1 border border-black text-center">
-    <img class="rounded" :src="account.picture" alt="" />
+    <img class="rounded" :src="user.picture" alt="" />
     <br>
-    <p>{{ account.class }} </p>
+    <p>{{ user.class }} </p>
     <br>
-    <p>{{ account.name }} </p>
+    <p>{{ user.name }} </p>
     <br>
-    <p>{{ account.email }}</p>
+    <p>{{ user.email }}</p>
     <br>
-    <p>{{ account.github }}</p>
+    <p>{{ user.github }}</p>
     <br>
-    <p>{{ account.linkedin }}</p>
+    <p>{{ user.linkedin }}</p>
     <br>
   </div>
 </template>
@@ -19,10 +19,16 @@
 import { computed } from 'vue'
 import { AppState } from '../AppState'
 export default {
-  name: 'Account',
+  name: 'Login',
+  props: {
+    user: {
+      type: Object,
+      required: true
+    }
+  },
   setup() {
     return {
-      account: computed(() => AppState.account)
+      user: computed(() => AppState.user)
     }
   }
 }

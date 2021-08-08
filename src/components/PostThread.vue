@@ -4,7 +4,7 @@
       <PostCard v-for="p in posts.posts" :key="p.id" :post="p" />
     </div>
     <div class="col-4">
-      <Acount />
+      <Display />
     </div>
   </div>
 </template>
