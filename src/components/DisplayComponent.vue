@@ -15,15 +15,39 @@
 </template>
 
 <script>
+// export default {
+//   props: {
+//     displays: {
+//       type: Array,
+//       required: true
+//     }
+//   }
+// }
+// </script>
+
+// starts here
+
 export default {
-  props: {
-    displays: {
-      type: Array,
-      required: true
+  // components: { DisplayComponent },
+  name: 'Display',
+  setup() {
+    const router = useRoute()
+    onMounted(async() => {
+      try {
+        await displayService.getAll()
+      } catch (error) {
+        Pop.toast(error, 'error')
+      }
+    })
+
+    return {
+      displays: computed(() => AppState.displays)
     }
   }
 }
 </script>
+
+// ends here
 
 <style scoped>
 img {
