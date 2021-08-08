@@ -31,7 +31,11 @@ d<template>
         delete
       </button>
     </div>
-    <!-- </div> -->
+    <!-- <router-link router-link :to="{ name: 'profile', params: {id: post.creator.id } }" @click.stop="" class="creator p-3 align-self-end">
+      <img class="h-100 rounded-pill" :src="post.creator.picture" alt="" srcset="">
+      {{ post.creator.name }}
+    </router-link> -->
+    <!-- copied to test the delete button v-if="account.id === post.creatorId"   -->
   </div>
 </template>
 

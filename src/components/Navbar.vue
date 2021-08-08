@@ -3,7 +3,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="input-group">
         <div class="form-outline">
-          <input type="search" id="form1" placeholder="Search..." class="form-control" />
+          <input type="search" id="form1" placeholder="Search..." v-model="state.search" class="form-control" />
         </div>
         <button type="button" height="8%" class="btn btn-primary">
           <i class="fas fa-search"></i>
@@ -77,7 +77,8 @@ import '@mdi/font/css/materialdesignicons.css'
 export default {
   setup() {
     const state = reactive({
-      dropOpen: false
+      dropOpen: false,
+      search: ''
     })
     return {
       state,
