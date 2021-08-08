@@ -1,11 +1,12 @@
 <template>
   <main class="container-fluid">
     <div class="row border-black">
-      <div class="col-md-5" width="20px" height="30px">
-        <Login />
+      <div class="col-md-5">
+        <Account />
       </div>
-      <div class="col-md-7" width="40px" height="70px">
-        <Navbar />
+      <div class="col-md-7">
+        <!-- <Navbar /> -->
+        <!-- Navbar commented to make test -->
         <Display />
         <router-view />
       </div>
@@ -16,12 +17,20 @@
 <script>
 import { computed } from 'vue'
 import { AppState } from './AppState'
+import Navbar from './components/Navbar.vue'
+import Login from './components/LoginComponent.vue'
+// import DisplayComponent from './components/DisplayComponent.vue'
+
 export default {
   name: 'App',
   setup() {
     return {
       appState: computed(() => AppState)
     }
+  },
+  components: {
+    Navbar,
+    Login
   }
 }
 </script>
