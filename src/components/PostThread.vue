@@ -3,9 +3,9 @@
     <div class="col-8">
       <PostCard v-for="p in posts.posts" :key="p.id" :post="p" />
     </div>
-    <div class="col-4">
+    <!-- <div class="col-4">
       <Display />
-    </div>
+    </div> -->
   </div>
 </template>
 

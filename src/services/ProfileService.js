@@ -7,10 +7,12 @@ class ProfileService {
     try {
       const res = await api.get('api/Profiles/:id' + id)
       AppState.account = res.data
+      debugger
     } catch (err) {
       logger.error('HAVE YOU STARTED YOUR SERVER YET???', err)
     }
   }
+
 //   //  NEED TO ADD query & ID-Posts
 //   GET https://bcw-sandbox.herokuapp.com/api/profiles?query=
 //     GET https://bcw-sandbox.herokuapp.com/api/profiles/:id/posts

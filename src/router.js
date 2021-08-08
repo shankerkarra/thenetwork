@@ -14,12 +14,17 @@ const routes = [
   {
     path: '/account',
     name: 'Account',
-    component: loadPage('LoginPage')
+    component: loadPage('AccountPage')
   },
   {
     path: '/profile',
-    name: 'About',
+    name: 'Profile',
     component: loadPage('ProfilePage')
+  },
+  {
+    path: '/account/id',
+    name: 'Account',
+    component: loadPage('AccountPage')
   },
   {
     path: '/login',

@@ -2,20 +2,22 @@ d<template>
   <div class="card card-block border-black w-500 p-1 m-1">
     <div class="row no-gutters m-1">
       <!-- disabled as button "Stop" is propagating to the parent and not allowing  -->
-      <!-- <router-link router-link :to="{ name: 'profile', params: {id: post.creator.id } }" @click.stop="" class="creator p-3 align-self-end">
-        <img class="h-100 rounded-pill" :src="post.creator.picture" alt="" srcset="">
-        {{ post.creator.name }}
-      </router-link> -->
       <div class="col-12 justify-align-right">
-        <img class="img img-rounded h-40 rounded-pill"
+        <!-- <router-link router-link
+                     :to="{ name: 'Login', params: {id: post.creator.id } }"
+                     @click.stop=""
+                     class="creator p-3 align-self-end"
+        > -->
+        <img class="h-100 rounded-pill"
              :src="post.creator.picture"
-             width="35"
-             height="35"
+             width="30"
+             height="30"
              alt=""
              srcset=""
              align="left"
         >
         {{ post.creator.name }}
+        <!-- </router-link> -->
       </div>
     </div>
     <div class="row p-1 no-gutters justify-align-left">
@@ -37,10 +39,6 @@ d<template>
         delete
       </button>
     </div>
-    <!-- <router-link router-link :to="{ name: 'profile', params: {id: post.creator.id } }" @click.stop="" class="creator p-3 align-self-end">
-      <img class="h-100 rounded-pill" :src="post.creator.picture" alt="" srcset="">
-      {{ post.creator.id }}
-    </router-link> -->
     <!-- copied to test the delete button v-if="account.id === post.creatorId"   -->
   </div>
 </template>
