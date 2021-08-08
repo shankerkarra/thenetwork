@@ -19,8 +19,6 @@ import { useRoute } from 'vue-router'
 
 export default {
   name: 'Home',
-  prev: '',
-  next: '',
   setup() {
     const router = useRoute()
     onMounted(async() => {
