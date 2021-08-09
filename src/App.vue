@@ -1,14 +1,9 @@
 <template>
   <main class="container-fluid">
     <div class="row border-black">
-      <div class="col-md-5">
-        <Account />
-      </div>
-      <div class="col-md-7">
-        <Navbar />
-        <Display />
-        <router-view />
-      </div>
+      <Account />
+      <Navbar />
+      <router-view />
     </div>
   </main>
 </template>
@@ -17,8 +12,6 @@
 import { computed } from 'vue'
 import { AppState } from './AppState'
 import Navbar from './components/Navbar.vue'
-import Login from './components/LoginComponent.vue'
-// import DisplayComponent from './components/DisplayComponent.vue'
 
 export default {
   name: 'App',
@@ -28,8 +21,7 @@ export default {
     }
   },
   components: {
-    Navbar,
-    Login
+    Navbar
   }
 }
 </script>

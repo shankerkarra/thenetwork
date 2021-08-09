@@ -2,7 +2,6 @@ import { AppState } from '../AppState'
 import { logger } from '../utils/Logger'
 import { api } from './AxiosService'
 
-//  This Service will be used to display Advt
 class PostsService {
   async getAll() {
     const res = await api.get('/api/posts')
@@ -15,6 +14,7 @@ class PostsService {
     logger.log(res.data)
     AppState.posts = res.data
   }
+
   async getPostByPage(page = {}) {
     const res = await api.get('/api/posts' + page)
     logger.log(res.data)
@@ -26,6 +26,7 @@ class PostsService {
     logger.log(res.data)
     AppState.posts = res.data
   }
+
   async createPost(post) {
     const res = await api.post('api/post', post)
     logger.log(res.data)

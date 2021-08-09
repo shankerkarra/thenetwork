@@ -1,24 +1,23 @@
 d<template>
-  <div class="card card-block border-black w-500 p-1 m-1">
-    <div class="row no-gutters m-1">
-      <!-- disabled as button "Stop" is propagating to the parent and not allowing  -->
-      <div class="col-12 justify-align-right">
-        <!-- <router-link router-link
+  <div class="card row no-gutters card-block border-black w-500 p-1 m-1">
+    <!-- disabled as button "Stop" is propagating to the parent and not allowing  -->
+    <div class="col-12 justify-align-right">
+      <!-- <router-link router-link
                      :to="{ name: 'Login', params: {id: post.creator.id } }"
                      @click.stop=""
                      class="creator p-3 align-self-end"
         > -->
-        <img class="h-100 rounded-pill"
-             :src="post.creator.picture"
-             width="30"
-             height="30"
-             alt=""
-             srcset=""
-             align="left"
-        >
-        {{ post.creator.name }}
-        <!-- </router-link> -->
-      </div>
+      <img class="h-100 rounded-pill"
+           :src="post.creator.picture"
+           width="30"
+           height="30"
+           alt=""
+           srcset=""
+           align="left"
+      >&nbsp;
+      {{ post.creator.name }}
+      <!-- </router-link> -->
+      <!-- </div> -->
     </div>
     <div class="row p-1 no-gutters justify-align-left">
       <div class="col-md-12 py-1 px-1 word-break word-wrap">

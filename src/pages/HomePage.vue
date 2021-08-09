@@ -1,23 +1,23 @@
 <template>
-  <div class="home flex-grow-1 d-flex flex-column align-items-center justify-content-center">
-    <div class="row d-flex flex-column">
-      <div class="col-6">
-        <PostThread :posts="posts" />
-      </div>
-      <div class="col-6">
-        <p>
-          <DisplayComponent :displays="displays" />
-        </p>
-      </div>
-      <div>
-      </div>
+  <div class="row d-flex flex-column">
+    <div class="col-4 border-black">
+      <Login :user="user" />
+    </div>
+    <div class="col-4 border-black">
+      <PostThread :posts="posts" />
+    </div>
+    <div class="col-4 border-black">
+      <p>
+        <DisplayComponent :displays="displays" />
+      </p>
+    </div>
+    <div>
     </div>
   </div>
 </template>
 
 <script>
 import { computed, onMounted } from '@vue/runtime-core'
-import { reactive } from 'vue'
 import { AppState } from '../AppState'
 import Pop from '../utils/Notifier'
 import { postsService } from '../services/PostsService'
@@ -26,13 +26,8 @@ import { useRoute } from 'vue-router'
 import { displayService } from '../services/DisplayService'
 
 export default {
-  // components: { DisplayComponent },
   name: 'Home',
   setup() {
-    const state = reactive({
-      prev: '',
-      next: ''
-    })
     const router = useRoute()
     onMounted(async() => {
       try {
@@ -49,6 +44,7 @@ export default {
         Pop.toast(error, 'error')
       }
     })
+
     onMounted(async() => {
       try {
         await displayService.getAll()

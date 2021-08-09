@@ -26,10 +26,10 @@
         <span class="navbar-text">
           <button
             class="btn btn-outline-primary text-uppercase"
-            @click="login"
+            @click="Account"
             v-if="!user.isAuthenticated"
           >
-            Login
+            Account
           </button>
           <div class="dropdown" v-else>
             <div
@@ -49,9 +49,9 @@
               :class="{ show: state.dropOpen }"
               @click="state.dropOpen = false"
             >
-              <router-link :to="{ name: 'Account' }">
+              <router-link :to="{ name: 'Profile', params: {creatorid: user.id }}">
                 <div class="list-group-item list-group-item-action hoverable">
-                  AccountPage
+                  ProfilePage
                 </div>
               </router-link>
               <div

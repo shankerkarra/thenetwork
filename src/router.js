@@ -12,24 +12,25 @@ const routes = [
     component: loadPage('HomePage')
   },
   {
-    path: '/account',
-    name: 'Account',
-    component: loadPage('AccountPage')
-  },
-  {
     path: '/profile',
     name: 'Profile',
     component: loadPage('ProfilePage')
   },
   {
+    path: '/account',
+    name: 'Account',
+    component: loadPage('ProfilePage'),
+    beforeEnter: authGuard
+  },
+  {
     path: '/account/id',
     name: 'Account',
-    component: loadPage('AccountPage')
+    component: loadPage('ProfilePage')
   },
   {
     path: '/login',
     name: 'Login',
-    component: loadPage('AccountPage'),
+    component: loadPage('ProfilePage'),
     beforeEnter: authGuard
   },
   {
