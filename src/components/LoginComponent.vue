@@ -28,7 +28,7 @@ export default {
   },
   setup() {
     return {
-      user: computed(() => AppState.user)
+      users: computed(() => AppState.user)
     }
   }
 }
